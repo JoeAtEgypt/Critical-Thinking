@@ -1,2 +1,2 @@
-from .swap import *
-from .insertion_sort import *
+from .swap_utility import *
+from .insertion_utility import *
