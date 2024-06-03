@@ -1,22 +1,24 @@
 arr = [18, 34, 20, 35, 10, 37, 43, 29, 3, 6]
 
 
-def merge(arr_1, arr_2):
+def merge(a, b):
     merged_arr = []
     i, j = 0, 0
-    while i < len(arr_1) or j < len(arr_2):
-        if arr_1[i] < arr_2[j]:
-            merged_arr.append(arr_1[i])
+    size_a = len(a)
+    size_b = len(b)
+    while i < size_a and j < size_b:
+        if a[i] < b[j]:
+            merged_arr.append(a[i])
             i += 1
         else:
-            merged_arr.append(arr_2[j])
+            merged_arr.append(b[j])
             j += 1
-        if i == len(arr_1):
-            merged_arr += arr_2[j:]
-            break
-        elif j == len(arr_2):
-            merged_arr += arr_1[i:]
-            break
+
+    if i == size_a:
+        merged_arr += b[j:]
+    elif j == size_b:
+        merged_arr += a[i:]
+        
     return merged_arr
 
 
@@ -32,4 +34,4 @@ def merge_sort(arr):
     return merge(sorted_left_arr, sorted_right_arr)
 
 
-print(merge_sort(arr))
+# print(merge_sort(arr))
