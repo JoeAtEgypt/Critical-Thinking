@@ -2,6 +2,7 @@ from frequency import frequency_array
 from cummulative_sum import prefix_sum
 
 arr = [1, 2, 7, 4, 2, 4, 3, 2, 34, 43]
+arr = [1, 2, 4, 3, 2, 3, 5, 2]
 
 def count_sort(arr):
     freq = prefix_sum(frequency_array(arr))
