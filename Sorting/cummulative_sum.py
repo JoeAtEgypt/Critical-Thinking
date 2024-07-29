@@ -6,15 +6,16 @@ def prefix_sum(arr):
     pre_sum = [arr[0]]
 
     for i in range(1, size):
-        pre_sum.append(arr[i] + pre_sum[i-1])
+        pre_sum.append(arr[i] + pre_sum[i - 1])
 
     return pre_sum
+
 
 def sum(pre, left, right):
     if left == 0:
         return pre[right]
     if left <= right:
-        return pre[right] - pre[left-1]
+        return pre[right] - pre[left - 1]
     else:
         print("the left index must be smaller than or equal right index")
         return -1
