@@ -1,20 +1,19 @@
+from collections import defaultdict
+
 arr = [1, 3, 2, 4, 2, 1]
 
 
 def frequency_dict(arr):
-    freq = {}
+    freq = defaultdict(int)
 
     for i in arr:
-        if i in freq:
-            freq[i] += 1
-        else:
-            freq[i] = 1
+        freq[i] += 1
 
-    return freq
+    return dict(freq)
 
 
 def frequency_array(arr):
-    freq = [0 for _ in range(max(arr)+1)]
+    freq = [0 for _ in range(max(arr) + 1)]
 
     for num in arr:
         freq[num] += 1
