@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 arr = [1, 3, 2, 4, 2, 1]
 
@@ -24,3 +24,4 @@ def frequency_array(arr):
 if __name__ == "__main__":
     print(frequency_dict(arr))
     print(frequency_array(arr))
+    print(Counter(arr))
