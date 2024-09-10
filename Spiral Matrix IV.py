@@ -1,4 +1,4 @@
-# Definition for singly-linked list.
+0# Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -28,21 +28,19 @@ def array_to_linked_list(arr):
 class Solution:
     def spiralMatrix(self, m: int, n: int, head: ListNode):
         mat = [[-1] * n for _ in range(m)]
-        d = [1, 0]
-        i, j = -1, -1
+        d = [0, 1]
+        i, j = 0, 0
         head = head.next
         while head is not None:
-            if j == n - 1 or mat[i][j + 1] != -1:
+            print(d)
+            if (j == n - 1 and i < m-1) or mat[i][j + 1] != -1:
                 d = [1, 0]
-            elif i == m - 1 or mat[i + 1][j] != -1:
+            elif (i == m - 1 and j < n-1) or mat[i + 1][j] != -1:
                 d = [0, -1]
-            elif j == 0 or mat[i][j - 1] != -1:
+            elif (j == 0 and i > 0) or mat[i][j + 1] != -1:
                 d = [-1, 0]
-            elif i == 0 or mat[i - 1][j] != -1:
+            elif (i == 0 and j > 0) or mat[i + 1][j] != -1:
                 d = [0, 1]
-
-            if i == -1 and j == -1:
-                i, j = 0, 0
 
             mat[i][j] = head.val
 
